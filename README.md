@@ -1,65 +1,131 @@
-# 🤖 LLM-Foundations: GPT From Scratch
+# LLM-Foundations-GPT-From-Scratch
 
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)
-![Status](https://img.shields.io/badge/status-complete-brightgreen.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-A complete, from-scratch implementation of a Large Language Model (LLM) pipeline. This project moves from raw text tokenization to training a GPT-style architecture with custom attention mechanisms.
+This repository contains a **foundational implementation of a Large Language Model (LLM)**, combining principles from GPT and other Transformer architectures. It demonstrates a full pipeline from tokenization to model training, evaluation, and visualization—implemented from scratch.
 
-> **Inspiration:** Based on *Build a Large Language Model (From Scratch)* by Sebastian Raschka (2024).
-
----
-
-## 💎 Project Highlights
-
-### 🧱 Core Architecture
-* **Transformer Blocks:** Implements custom self-attention, layer normalization, and residual connections.
-* **GPT Class:** A modular stack of decoder blocks capable of handling variable sequence lengths.
-* **Embeddings:** Dual-layer approach using both **Token** and **Positional** embeddings.
-
-### ⚙️ Pipeline & Mechanics
-* **Processing:** Uses `tiktoken` (BPE) for encoding and `GPTDatasetV1` for sliding-window data loading.
-* **Decoding:** Features Greedy search, **Temperature Scaling**, and **Top-k Sampling** for creative text generation.
-* **Optimization:** Driven by **AdamW** with cross-entropy loss and **Perplexity** tracking.
+> [!IMPORTANT]  
+> Based on: **Sebastian Raschka - Build a Large Language Model (From Scratch)**, Manning (2024).
 
 ---
 
-## 📊 Technical Gallery
+## Core Features & Mechanics
 
-To verify the model's health and mathematical foundation, I tracked the following visualizations:
+### 1. Transformer Architecture
+* **Foundational Blocks:** Implements Token/Positional embeddings, Multi-head self-attention, and Feed-forward layers.
+* **GPT Model Class:** A sequential stack of Transformer blocks with linear output projection for next-token prediction.
+* **Stability:** Integrated Layer Normalization and Residual Connections.
 
-### 📈 Convergence & Loss
-| **Training Snapshot** | 
+### 2. Data Pipeline & Tokenization
+* **Tiktoken:** Uses GPT-2 BPE tokenizer for efficient encoding.
+* **Dataset (GPTDatasetV1):** Implements sliding window chunking for automatic input-target pair creation.
+
+### 3. Training & Inference
+* **Optimization:** Standard training loop using **AdamW optimizer** with cross-entropy loss tracking.
+* **Decoding:** Supports Greedy decoding, **Temperature Scaling**, and **Top-k Sampling** for varied text generation.
+* **Evaluation:** Built-in utilities for **Perplexity** calculation and batch-level loss monitoring.
+
+---
+
+## Project Visualizations
+
+To verify architectural correctness, I tracked training progress and mathematical behaviors.
+
+### Model Performance
+| **Training & Validation Loss** | 
 | :---: | 
-| <img src="assets/loss_plot.png" width="550" /> | 
-| *Training vs. Validation loss over 10 epochs.* |
+| <img src="assets/loss_plot.png" width="700" height="350" /> | 
+| *Loss tracking across 10 Epochs showing model convergence.* |
 
 ---
 
-### 🧪 Model Mechanics & Embeddings
-We forced these images to match heights to ensure a clean, level interface.
-
-| **GELU vs ReLU** | **Temperature Scaling** |
+### Technical Deep-Dive
+| **GELU vs ReLU Comparison** | **Temperature Scaling Impact** |
 | :---: | :---: |
-| <img src="assets/gelu_comparison.png" height="250" /> | <img src="assets/temperature_scaling.png" height="250" /> |
-| *Activation smoothing.* | *Distribution shifts.* |
+| <img src="assets/gelu_comparison.png" height="280" /> | <img src="assets/temperature_scaling.png" height="280" /> |
 
-| **Vector Space A** | **Vector Space B** |
+| **Vector Projections (A)** | **Vector Projections (B)** |
 | :---: | :---: |
-| <img src="assets/embedding_3d_1.png" height="250" /> | <img src="assets/embedding_3d_2.png" height="250" /> |
-| *Token relationships.* | *Cluster projections.* |
+| <img src="assets/embedding_3d_1.png" height="250" width="300" /> | <img src="assets/embedding_3d_2.png" height="250" width="300" /> |
 
 ---
 
-## 🚀 Quick Start
+### Installation
+```bash
+git clone [https://github.com/](https://github.com/)<your-username>/LLM-Foundations-GPT-From-Scratch.git
+cd LLM-Foundations-GPT-From-Scratch
+pip install torch tiktoken matplotlib
+### Installation
+
+Install required dependencies:
 
 ```bash
-# Install
 pip install torch tiktoken matplotlib
+```
 
-# Basic Usage
+
+### Usage
+
+Clone the repository:
+
+```bash
+git clone <repo-url>
+cd <repo-folder>
+```
+
+Load data and initialize the model:
+
+```bash
 from model import GPTModel
+import tiktoken, torch
+
+tokenizer = tiktoken.get_encoding("gpt2")
+model = GPTModel(
+    vocab_size=len(tokenizer),
+    block_size=128,  # context length
+    n_layer=6,       # number of transformer blocks
+    n_head=8,        # number of attention heads
+    n_embd=256       # embedding dimension
+)
+```
+
+Train the Model
+
+```bash
 from train import train_model_simple
 
-model = GPTModel(vocab_size=50257, block_size=128, n_layer=6, n_head=8, n_embd=256)
-train_model_simple(model=model, data="data.txt", epochs=10, lr=3e-4)
+train_model_simple(
+    model=model,
+    data="data.txt",
+    tokenizer=tokenizer,
+    epochs=10,
+    batch_size=16,
+    lr=3e-4,
+    device="cuda"  # or "cpu"
+)
+```
+
+Quick Forward-Pass Test 
+
+```bash
+from utils import text_to_token_ids, token_ids_to_text, generate_text_simple, evaluate_model
+
+input_text = "Once upon a time"
+input_ids = text_to_token_ids(input_text, tokenizer)
+```
+
+Forward pass example
+
+```bash
+output_ids = generate_text_simple(model, input_ids, max_new_tokens=50)
+output_text = token_ids_to_text(output_ids, tokenizer)
+print(output_text)
+```
+
+Evaluate the Model
+```bash
+loss, perplexity = evaluate_model(model, val_loader)
+print(f"Validation Loss: {loss:.4f}, Perplexity: {perplexity:.4f}")
+```"# LLM-Foundations-GPT-From-Scratch" 
