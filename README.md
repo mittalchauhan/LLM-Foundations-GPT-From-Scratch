@@ -76,22 +76,40 @@ The code demonstrates foundational LLM concepts and training pipeline for educat
 
 ---
 
-Below are the visual components generated during the development and training of the model:
+##  Project Visualizations
 
+Below are the visual components generated during the development and training of the model. These plots verify the mathematical foundations and the training progress.
+
+### 1. Training & Validation Loss
 This plot shows how the model learned over time. The gap between the lines illustrates the training progress and the point where the model begins to overfit the small dataset.
-![Loss Plot](assets/loss_plot.png)
 
-A comparison of the standard ReLU activation function and the GELU activation used in GPT architectures for smoother gradients.
-![GELU Comparison](assets/gelu_comparison.png)
+<p align="center">
+  <img src="assets/loss_plot.png" width="700px" />
+</p>
 
-Visualizing how the 'Temperature' parameter ($\tau$) shifts the next-token probability distribution, controlling creativity vs. coherence.
-![Temperature Scaling](assets/temperature_scaling.png)
+---
 
-These 3D plots represent the vector space of our token embeddings, showing how the model begins to organize relationships between different tokens.
-![3D Embedding 1](assets/embedding_3d_1.png)
-![3D Embedding 2](assets/embedding_3d_2.png)
+### 2. Architectural & Decoding Mechanics
+We compared activation functions and analyzed how decoding parameters like temperature affect the output distribution.
 
+| **GELU vs ReLU Comparison** | **Temperature Scaling Impact** |
+| :---: | :---: |
+| <img src="assets/gelu_comparison.png" width="400px" /> | <img src="assets/temperature_scaling.png" width="400px" /> |
+| *Smoother gradients for GPT blocks.* | *Shifting probability distribution ($\tau$).* |
 
+---
+
+### 3. Embedding Vector Space
+These 3D plots represent the vector space of our token embeddings, showing how the model begins to organize relationships between different tokens in 3D space.
+
+<p align="center">
+  <img src="assets/embedding_3d_1.png" width="45%" />
+  <img src="assets/embedding_3d_2.png" width="45%" />
+  <br>
+  <em>Figure: 3D projections of token vector relationships.</em>
+</p>
+
+---
 ### Installation
 
 Install required dependencies:
