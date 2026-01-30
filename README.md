@@ -78,38 +78,41 @@ The code demonstrates foundational LLM concepts and training pipeline for educat
 
 ##  Project Visualizations
 
-Below are the visual components generated during the development and training of the model. These plots verify the mathematical foundations and the training progress.
+##  Training Insights & Architecture
 
-### 1. Training & Validation Loss
-This plot shows how the model learned over time. The gap between the lines illustrates the training progress and the point where the model begins to overfit the small dataset.
+To ensure the model was converging correctly, I tracked several key metrics. The visualizations below highlight the training progress and the mathematical foundations of the GPT architecture.
 
+###  Model Convergence (The "Hero" Plot)
+This is the primary evidence of the model's performance. By centering it and setting a standard width, it stays clean on both mobile and desktop.
 <p align="center">
-  <img src="assets/loss_plot.png" width="700px" />
-</p>
-
----
-
-### 2. Architectural & Decoding Mechanics
-We compared activation functions and analyzed how decoding parameters like temperature affect the output distribution.
-
-| **GELU vs ReLU Comparison** | **Temperature Scaling Impact** |
-| :---: | :---: |
-| <img src="assets/gelu_comparison.png" width="400px" /> | <img src="assets/temperature_scaling.png" width="400px" /> |
-| *Smoother gradients for GPT blocks.* | *Shifting probability distribution ($\tau$).* |
-
----
-
-### 3. Embedding Vector Space
-These 3D plots represent the vector space of our token embeddings, showing how the model begins to organize relationships between different tokens in 3D space.
-
-<p align="center">
-  <img src="assets/embedding_3d_1.png" width="45%" />
-  <img src="assets/embedding_3d_2.png" width="45%" />
+  <img src="assets/loss_plot.png" width="600px" />
   <br>
-  <em>Figure: 3D projections of token vector relationships.</em>
+  <em>Training vs. Validation Loss across 10 Epochs.</em>
 </p>
 
 ---
+
+###  Technical Comparisons
+These plots compare the internal mechanics of the Transformer blocks. By putting them in a table, we force them to stay the same size.
+
+| **GELU vs ReLU** | **Temperature Scaling** |
+| :---: | :---: |
+| <img src="assets/gelu_comparison.png" width="380px" /> | <img src="assets/temperature_scaling.png" width="380px" /> |
+| *Activation function smoothness.* | *Probability distribution shifts.* |
+
+---
+
+###  Embedding Space Visualization
+Visualizing how the model "sees" tokens in a 3D vector space. These are grouped to avoid the "endless scroll."
+
+<p align="center">
+  <img src="assets/embedding_3d_1.png" width="40%" />
+  <img src="assets/embedding_3d_2.png" width="40%" />
+  <img src="assets/token_probabilities.png" width="81%" />
+  <br>
+  <em>Figure: 3D Token Embeddings and Next-Token Probability Distribution.</em>
+</p>
+
 ### Installation
 
 Install required dependencies:
