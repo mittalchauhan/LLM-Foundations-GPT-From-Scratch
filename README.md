@@ -85,7 +85,7 @@ By placing the primary metric in a centered box, we maintain a consistent visual
 
 | **Training & Validation Loss** | 
 | :---: | 
-| <img src="assets/loss_plot.png" width="900px" height="200px" /> | 
+| <img src="assets/loss_plot.png" width="700px" height="300px"/> | 
 | *Cross-entropy loss tracking across 10 Epochs.* |
 
 ---
