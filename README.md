@@ -32,7 +32,7 @@ This repository contains a **foundational implementation of a Large Language Mod
 ## Project Visualizations
 To verify architectural correctness, I tracked training progress and mathematical behaviors.
 
-#### Model Performance & Latent Analysis
+### Model Performance & Latent Analysis
 To verify the model's integrity, we monitor both the mathematical convergence (Loss) and the resulting spatial organization of the learned embeddings.
 
 | **Training & Validation Loss** | **Embedding Topology (3D)** | **Cluster Projections (3D)** |
@@ -41,7 +41,7 @@ To verify the model's integrity, we monitor both the mathematical convergence (L
 | *Convergence tracking.* | *Vector Space Projection A.* | *Vector Space Projection B.* |
 ---
 
-#### Technical Deep-Dive
+### Technical Deep-Dive
 | **GELU vs ReLU Comparison** | **Temperature Scaling Impact** |
 | :---: | :---: |
 | <img src="assets/gelu_comparison.png" height="280" /> | <img src="assets/temperature_scaling.png" height="280" /> |
