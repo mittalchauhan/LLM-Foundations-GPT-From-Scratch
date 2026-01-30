@@ -1,4 +1,4 @@
-# Foundational Large Language Model: Transformer Pipeline
+## Foundational Large Language Model: Transformer Pipeline
 
 This repository contains a **foundational implementation of a Large Language Model (LLM)**, combining principles from GPT and other LLM architectures.
 It demonstrates a full pipeline from tokenization to model training, text generation, evaluation, and visualization, implemented from scratch.
