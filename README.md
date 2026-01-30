@@ -76,38 +76,37 @@ The code demonstrates foundational LLM concepts and training pipeline for educat
 
 ---
 
-##  Project Visualizations
-
-##  Training Insights & Architecture
+## 📊 Project Visualizations
 
 To ensure the model was converging correctly, I tracked several key metrics. The visualizations below highlight the training progress and the mathematical foundations of the GPT architecture.
 
-###  Model Convergence
-This is the primary evidence of the model's performance. By centering it and setting a standard width, it stays clean on both mobile and desktop.
+### 📈 Model Convergence
+By placing the primary metric in a centered box, we maintain a consistent visual language across the README.
 
-| **Loss plot** | 
+| **Training & Validation Loss** | 
 | :---: | 
-| <img src="assets/loss_plot.png" width="380px" /> | 
-| *Training vs. Validation Loss across 10 Epochs.* |
+| <img src="assets/loss_plot.png" width="500px" /> | 
+| *Cross-entropy loss tracking across 10 Epochs.* |
+
 ---
 
-###  Technical Comparisons
-These plots compare the internal mechanics of the Transformer blocks. By putting them in a table, we force them to stay the same size.
+### 🧪 Technical Mechanics
+These plots compare the internal building blocks of the Transformer. Using a side-by-side grid keeps the comparison sharp.
 
-| **GELU vs ReLU** | **Temperature Scaling** |
+| **GELU vs ReLU Comparison** | **Temperature Scaling Impact** |
 | :---: | :---: |
 | <img src="assets/gelu_comparison.png" width="380px" /> | <img src="assets/temperature_scaling.png" width="380px" /> |
-| *Activation function smoothness.* | *Probability distribution shifts.* |
+| *Smoothness of GPT activation layers.* | *Distribution shifts for next-token prediction.* |
 
 ---
 
-###  Embedding Space Visualization
-Visualizing how the model "sees" tokens in a 3D vector space. These are grouped to avoid the "endless scroll."
+### 🌌 Embedding Space Visualization
+These 3D plots represent the high-dimensional vector space where the model organizes token relationships.
 
+| **Vector Projections (A)** | **Vector Projections (B)** |
 | :---: | :---: |
 | <img src="assets/embedding_3d_1.png" width="380px" /> | <img src="assets/embedding_3d_2.png" width="380px" /> |
-
-| Figure: 3D Token Embeddings and Next-Token Probability Distribution |
+| *3D spatial organization of token embeddings.* | *Relationship clusters in the latent space.* |
 
 ### Installation
 
