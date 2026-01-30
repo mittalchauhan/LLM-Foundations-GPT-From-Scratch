@@ -30,14 +30,15 @@ This repository contains a **foundational implementation of a Large Language Mod
 ---
 
 ## Project Visualizations
-
 To verify architectural correctness, I tracked training progress and mathematical behaviors.
 
-### Model Performance
-| **Training & Validation Loss** | **Vector Projections (A)** | **Vector Projections (B)** |
+### Model Performance & Latent Analysis
+To verify the model's integrity, we monitor both the mathematical convergence (Loss) and the resulting spatial organization of the learned embeddings.
+
+| **Training & Validation Loss** | **Embedding Topology (3D)** | **Cluster Projections (3D)** |
 | :---: | :---: | :---: |
 | <img src="assets/loss_plot.png" width="400" height="250" /> | <img src="assets/embedding_3d_1.png" width="400" height="250"/> | <img src="assets/embedding_3d_2.png" width="400" height="250"/> |
-
+| *Convergence tracking.* | *Vector Space Projection A.* | *Vector Space Projection B.* |
 ---
 
 ### Technical Deep-Dive
