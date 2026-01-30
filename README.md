@@ -76,21 +76,21 @@ The code demonstrates foundational LLM concepts and training pipeline for educat
 
 ---
 
-## 📊 Project Visualizations
+##  Project Visualizations
 
 To ensure the model was converging correctly, I tracked several key metrics. The visualizations below highlight the training progress and the mathematical foundations of the GPT architecture.
 
-### 📈 Model Convergence
+### Model Convergence
 By placing the primary metric in a centered box, we maintain a consistent visual language across the README.
 
 | **Training & Validation Loss** | 
 | :---: | 
-| <img src="assets/loss_plot.png" width="700px" height="300px"/> | 
+| <img src="assets/loss_plot.png" width="500px"/> | 
 | *Cross-entropy loss tracking across 10 Epochs.* |
 
 ---
 
-### 🧪 Technical Mechanics
+###  Technical Mechanics
 These plots compare the internal building blocks of the Transformer. Using a side-by-side grid keeps the comparison sharp.
 
 | **GELU vs ReLU Comparison** | **Temperature Scaling Impact** |
@@ -100,7 +100,7 @@ These plots compare the internal building blocks of the Transformer. Using a sid
 
 ---
 
-### 🌌 Embedding Space Visualization
+###  Embedding Space Visualization
 These 3D plots represent the high-dimensional vector space where the model organizes token relationships.
 
 | **Vector Projections (A)** | **Vector Projections (B)** |
