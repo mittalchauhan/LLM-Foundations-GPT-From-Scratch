@@ -2,9 +2,9 @@
 
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Status](https://img.shields.io/badge/status-complete-brightgreen.svg)
 
-This repository contains a **foundational implementation of a Large Language Model (LLM)**, combining principles from GPT and other Transformer architectures. It demonstrates a full pipeline from tokenization to model training, evaluation, and visualization—implemented from scratch.
+This repository contains a **foundational implementation of a Large Language Model (LLM)**, combining principles from GPT and other Transformer architectures. It demonstrates a full pipeline from tokenization to model training, evaluation, and visualization from scratch.
 
 > [!IMPORTANT]  
 > Based on: **Sebastian Raschka - Build a Large Language Model (From Scratch)**, Manning (2024).
@@ -13,16 +13,16 @@ This repository contains a **foundational implementation of a Large Language Mod
 
 ## Core Features & Mechanics
 
-### 1. Transformer Architecture
+### Transformer Architecture
 * **Foundational Blocks:** Implements Token/Positional embeddings, Multi-head self-attention, and Feed-forward layers.
 * **GPT Model Class:** A sequential stack of Transformer blocks with linear output projection for next-token prediction.
 * **Stability:** Integrated Layer Normalization and Residual Connections.
 
-### 2. Data Pipeline & Tokenization
+### Data Pipeline & Tokenization
 * **Tiktoken:** Uses GPT-2 BPE tokenizer for efficient encoding.
 * **Dataset (GPTDatasetV1):** Implements sliding window chunking for automatic input-target pair creation.
 
-### 3. Training & Inference
+### Training & Inference
 * **Optimization:** Standard training loop using **AdamW optimizer** with cross-entropy loss tracking.
 * **Decoding:** Supports Greedy decoding, **Temperature Scaling**, and **Top-k Sampling** for varied text generation.
 * **Evaluation:** Built-in utilities for **Perplexity** calculation and batch-level loss monitoring.
@@ -36,7 +36,7 @@ To verify architectural correctness, I tracked training progress and mathematica
 ### Model Performance
 | **Training & Validation Loss** | 
 | :---: | 
-| <img src="assets/loss_plot.png" width="700" height="350" /> | 
+| <img src="assets/loss_plot.png" height="350" /> | 
 | *Loss tracking across 10 Epochs showing model convergence.* |
 
 ---
@@ -48,7 +48,7 @@ To verify architectural correctness, I tracked training progress and mathematica
 
 | **Vector Projections (A)** | **Vector Projections (B)** |
 | :---: | :---: |
-| <img src="assets/embedding_3d_1.png" height="250" width="300" /> | <img src="assets/embedding_3d_2.png" height="250" width="300" /> |
+| <img src="assets/embedding_3d_1.png" width="400" height="250"/> | <img src="assets/embedding_3d_2.png" width="400" height="250"/> |
 
 ---
 
