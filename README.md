@@ -36,7 +36,7 @@ To verify architectural correctness, I tracked training progress and mathematica
 ### Model Performance
 | **Training & Validation Loss** | 
 | :---: | 
-| <img src="assets/loss_plot.png" height="350" /> | 
+| <img src="assets/loss_plot.png" width="700" height="250" /> | 
 | *Loss tracking across 10 Epochs showing model convergence.* |
 
 ---
@@ -48,7 +48,7 @@ To verify architectural correctness, I tracked training progress and mathematica
 
 | **Vector Projections (A)** | **Vector Projections (B)** |
 | :---: | :---: |
-| <img src="assets/embedding_3d_1.png" width="400" height="250"/> | <img src="assets/embedding_3d_2.png" width="400" height="250"/> |
+| <img src="assets/embedding_3d_1.png" width="500" height="250"/> | <img src="assets/embedding_3d_2.png" width="500" height="250"/> |
 
 ---
 
