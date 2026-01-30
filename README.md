@@ -1,113 +1,62 @@
-## Foundational Large Language Model: Transformer Pipeline
+# LLM-Foundations-GPT-From-Scratch
 
-This repository contains a **foundational implementation of a Large Language Model (LLM)**, combining principles from GPT and other LLM architectures.
-It demonstrates a full pipeline from tokenization to model training, text generation, evaluation, and visualization, implemented from scratch.
+![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-This project is based on the book: 
-Sebastian Raschka - *Build a Large Language Model (From Scratch)*, Manning (2024). 
-The code demonstrates foundational LLM concepts and training pipeline for educational purposes.
+This repository contains a **foundational implementation of a Large Language Model (LLM)**, combining principles from GPT and other Transformer architectures. It demonstrates a full pipeline from tokenization to model training, evaluation, and visualization—implemented from scratch.
 
----
-
-## Key Features
-
-### 1. Foundational LLM Mechanics
-- Implements the core Transformer building blocks for large language models:
-  - **Token embeddings** and **positional embeddings**
-  - **Multi-head self-attention** mechanism
-  - **Feed-forward layers** within Transformer blocks
-  - **Layer normalization** and residual connections
-- Demonstrates essential LLM operations:
-  - Attention computation
-  - Forward pass propagation
-  - Next-token prediction
-- Designed as a **foundational framework** before adding higher-level architectures like GPT
-
-### 2. GPT Model Class (Built on top of foundational LLM)
-- Uses the Transformer building blocks to implement a **GPT-style model**:
-  - Sequential stack of Transformer blocks
-  - Linear output projection for next-token prediction
-  - Supports variable batch sizes and sequence lengths
-- Illustrates how **core LLM components integrate into a GPT-style architecture**
-
-### 3. Text Tokenization
-- Uses **GPT-2 tokenizer** (`tiktoken`) for converting text to token IDs
-- Utility functions:
-  - `text_to_token_ids(text, tokenizer)` → converts text to token tensors
-  - `token_ids_to_text(token_ids, tokenizer)` → converts token tensors back to text
-
-### 4. Text Generation
-- Greedy decoding via `generate_text_simple`
-  - Sequential token generation by selecting the most probable next token
-- Supports advanced decoding strategies:
-  - Temperature scaling
-  - Probabilistic sampling with `torch.multinomial`
-  - Top-k sampling for variety in generated text
-
-### 5. Loss Calculation and Evaluation
-- Cross-entropy loss between predicted logits and target token sequences
-- Computes **perplexity** for interpretable performance metrics
-- Evaluation utilities:
-  - `calc_loss_batch` → batch-level loss
-  - `calc_loss_loader` → average loss over a DataLoader
-  - `evaluate_model` → training & validation loss monitoring
-
-### 6. Dataset Preparation
-- Prepares text into overlapping sequences using `GPTDatasetV1`
-- Supports:
-  - Sliding window text chunking
-  - Automatic input-target pair creation for next-token prediction
-- Compatible with PyTorch `DataLoader` for batch training
-
-### 7. Training Loop
-- `train_model_simple` function:
-  - Standard LLM training loop using **AdamW optimizer**
-  - Tracks training and validation loss across epochs
-  - Generates text samples at the end of each epoch for qualitative evaluation
-- Includes GPU/CPU device management and reproducibility utilities
-
-### 8. Visualization
-- Plots training and validation loss curves
-- Dual-axis plots for epochs vs. tokens seen
-
-### 9. Quick Testing
-- Forward-pass test for validation without full training
-- Ideal for low-resource environments or initial sanity checks
+> [!IMPORTANT]  
+> Based on: **Sebastian Raschka - Build a Large Language Model (From Scratch)**, Manning (2024).
 
 ---
 
-##  Project Visualizations
+## Core Features & Mechanics
 
-To ensure the model was converging correctly, I tracked several key metrics. The visualizations below highlight the training progress and the mathematical foundations of the GPT architecture.
+### 1. Transformer Architecture
+* **Foundational Blocks:** Implements Token/Positional embeddings, Multi-head self-attention, and Feed-forward layers.
+* **GPT Model Class:** A sequential stack of Transformer blocks with linear output projection for next-token prediction.
+* **Stability:** Integrated Layer Normalization and Residual Connections.
 
-### Model Convergence
-By placing the primary metric in a centered box, we maintain a consistent visual language across the README.
+### 2. Data Pipeline & Tokenization
+* **Tiktoken:** Uses GPT-2 BPE tokenizer for efficient encoding.
+* **Dataset (GPTDatasetV1):** Implements sliding window chunking for automatic input-target pair creation.
 
+### 3. Training & Inference
+* **Optimization:** Standard training loop using **AdamW optimizer** with cross-entropy loss tracking.
+* **Decoding:** Supports Greedy decoding, **Temperature Scaling**, and **Top-k Sampling** for varied text generation.
+* **Evaluation:** Built-in utilities for **Perplexity** calculation and batch-level loss monitoring.
+
+---
+
+## Project Visualizations
+
+To verify architectural correctness, I tracked training progress and mathematical behaviors.
+
+### Model Performance
 | **Training & Validation Loss** | 
 | :---: | 
-| <img src="assets/loss_plot.png" width="500px"/> | 
-| *Cross-entropy loss tracking across 10 Epochs.* |
+| <img src="assets/loss_plot.png" width="500" height="350" /> | 
+| *Loss tracking across 10 Epochs showing model convergence.* |
 
 ---
 
-###  Technical Mechanics
-These plots compare the internal building blocks of the Transformer. Using a side-by-side grid keeps the comparison sharp.
-
+### Technical Deep-Dive
 | **GELU vs ReLU Comparison** | **Temperature Scaling Impact** |
 | :---: | :---: |
-| <img src="assets/gelu_comparison.png" width="380px" /> | <img src="assets/temperature_scaling.png" width="380px" /> |
-| *Smoothness of GPT activation layers.* | *Distribution shifts for next-token prediction.* |
-
----
-
-###  Embedding Space Visualization
-These 3D plots represent the high-dimensional vector space where the model organizes token relationships.
+| <img src="assets/gelu_comparison.png" height="280" /> | <img src="assets/temperature_scaling.png" height="280" /> |
 
 | **Vector Projections (A)** | **Vector Projections (B)** |
 | :---: | :---: |
-| <img src="assets/embedding_3d_1.png" width="380px" /> | <img src="assets/embedding_3d_2.png" width="380px" /> |
-| *3D spatial organization of token embeddings.* | *Relationship clusters in the latent space.* |
+| <img src="assets/embedding_3d_1.png" height="250" /> | <img src="assets/embedding_3d_2.png" height="250" /> |
 
+---
+
+### Installation
+```bash
+git clone [https://github.com/](https://github.com/)<your-username>/LLM-Foundations-GPT-From-Scratch.git
+cd LLM-Foundations-GPT-From-Scratch
+pip install torch tiktoken matplotlib
 ### Installation
 
 Install required dependencies:
