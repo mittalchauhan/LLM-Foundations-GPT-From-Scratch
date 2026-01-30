@@ -23,7 +23,7 @@ The code demonstrates foundational LLM concepts and training pipeline for educat
   - Next-token prediction
 - Designed as a **foundational framework** before adding higher-level architectures like GPT
 
-### 2. GPTModel Class (Built on top of foundational LLM)
+### 2. GPT Model Class (Built on top of foundational LLM)
 - Uses the Transformer building blocks to implement a **GPT-style model**:
   - Sequential stack of Transformer blocks
   - Linear output projection for next-token prediction
@@ -106,9 +106,8 @@ These plots compare the internal mechanics of the Transformer blocks. By putting
 Visualizing how the model "sees" tokens in a 3D vector space. These are grouped to avoid the "endless scroll."
 
 <p align="center">
-  <img src="assets/embedding_3d_1.png" width="40%" />
-  <img src="assets/embedding_3d_2.png" width="40%" />
-  <img src="assets/token_probabilities.png" width="81%" />
+  <img src="assets/embedding_3d_1.png" width="40%" height="20%" />
+  <img src="assets/embedding_3d_2.png" width="40%" height="20%" />
   <br>
   <em>Figure: 3D Token Embeddings and Next-Token Probability Distribution.</em>
 </p>
