@@ -1,4 +1,9 @@
-torch>=2.0
-tiktoken>=0.4
-matplotlib>=3.7
-numpy>=1.25
+# Core Framework
+torch>=2.0.0
+
+# Tokenization & Data
+tiktoken>=0.4.0
+numpy>=1.25.0
+
+# Visualization
+matplotlib>=3.7.0

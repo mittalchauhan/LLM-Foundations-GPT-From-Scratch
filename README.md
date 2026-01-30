@@ -1,4 +1,4 @@
-# LLM-Foundations-GPT-From-Scratch
+# 🤖 LLM-Foundations-GPT-From-Scratch
 
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)
