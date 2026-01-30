@@ -47,20 +47,6 @@ To verify the model's integrity, we monitor both the mathematical convergence (L
 
 ---
 
-### Installation
-```bash
-git clone [https://github.com/](https://github.com/)<your-username>/LLM-Foundations-GPT-From-Scratch.git
-cd LLM-Foundations-GPT-From-Scratch
-pip install torch tiktoken matplotlib
-### Installation
-
-Install required dependencies:
-
-```bash
-pip install torch tiktoken matplotlib
-```
-
-
 ### Usage
 
 Clone the repository:
