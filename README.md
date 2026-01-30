@@ -38,7 +38,6 @@ To verify the model's integrity, we monitor both the mathematical convergence (L
 | **Training & Validation Loss** | **Embedding Topology (3D)** | **Cluster Projections (3D)** |
 | :---: | :---: | :---: |
 | <img src="assets/loss_plot.png" width="400" height="250" /> | <img src="assets/embedding_3d_1.png" width="400" height="250"/> | <img src="assets/embedding_3d_2.png" width="400" height="250"/> |
-| *Convergence tracking.* | *Vector Space Projection A.* | *Vector Space Projection B.* |
 ---
 
 ### Technical Deep-Dive
