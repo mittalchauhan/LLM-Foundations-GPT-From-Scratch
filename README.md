@@ -34,10 +34,9 @@ This repository contains a **foundational implementation of a Large Language Mod
 To verify architectural correctness, I tracked training progress and mathematical behaviors.
 
 ### Model Performance
-| **Training & Validation Loss** | 
-| :---: | 
-| <img src="assets/loss_plot.png" width="700" height="250" /> | 
-| *Loss tracking across 10 Epochs showing model convergence.* |
+| **Training & Validation Loss** | **Vector Projections (A)** | **Vector Projections (B)** |
+| :---: | :---: | :---: |
+| <img src="assets/loss_plot.png" width="400" height="250" /> | <img src="assets/embedding_3d_1.png" width="400" height="250"/> | <img src="assets/embedding_3d_2.png" width="400" height="250"/> |
 
 ---
 
@@ -45,10 +44,6 @@ To verify architectural correctness, I tracked training progress and mathematica
 | **GELU vs ReLU Comparison** | **Temperature Scaling Impact** |
 | :---: | :---: |
 | <img src="assets/gelu_comparison.png" height="280" /> | <img src="assets/temperature_scaling.png" height="280" /> |
-
-| **Vector Projections (A)** | **Vector Projections (B)** |
-| :---: | :---: |
-| <img src="assets/embedding_3d_1.png" width="500" height="250"/> | <img src="assets/embedding_3d_2.png" width="500" height="250"/> |
 
 ---
 
