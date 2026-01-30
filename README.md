@@ -82,14 +82,13 @@ The code demonstrates foundational LLM concepts and training pipeline for educat
 
 To ensure the model was converging correctly, I tracked several key metrics. The visualizations below highlight the training progress and the mathematical foundations of the GPT architecture.
 
-###  Model Convergence (The "Hero" Plot)
+###  Model Convergence
 This is the primary evidence of the model's performance. By centering it and setting a standard width, it stays clean on both mobile and desktop.
-<p align="center">
-  <img src="assets/loss_plot.png" width="600px" />
-  <br>
-  <em>Training vs. Validation Loss across 10 Epochs.</em>
-</p>
 
+| **Loss plot** | 
+| :---: | 
+| <img src="assets/loss_plot.png" width="380px" /> | 
+| *Training vs. Validation Loss across 10 Epochs.* |
 ---
 
 ###  Technical Comparisons
@@ -105,12 +104,10 @@ These plots compare the internal mechanics of the Transformer blocks. By putting
 ###  Embedding Space Visualization
 Visualizing how the model "sees" tokens in a 3D vector space. These are grouped to avoid the "endless scroll."
 
-<p align="center">
-  <img src="assets/embedding_3d_1.png" width="40%" height="20%" />
-  <img src="assets/embedding_3d_2.png" width="40%" height="20%" />
-  <br>
-  <em>Figure: 3D Token Embeddings and Next-Token Probability Distribution.</em>
-</p>
+| :---: | :---: |
+| <img src="assets/embedding_3d_1.png" width="380px" /> | <img src="assets/embedding_3d_2.png" width="380px" /> |
+
+| Figure: 3D Token Embeddings and Next-Token Probability Distribution |
 
 ### Installation
 
