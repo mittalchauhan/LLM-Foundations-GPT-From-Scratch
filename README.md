@@ -149,7 +149,7 @@ from train import train_model_simple
 
 train_model_simple(
     model=model,
-    data="path/to/text/data.txt",
+    data="data.txt",
     tokenizer=tokenizer,
     epochs=10,
     batch_size=16,
